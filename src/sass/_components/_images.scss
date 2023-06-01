@@ -1,0 +1,23 @@
+.image {
+    &-fit__cover {
+        object-fit: cover;
+    }
+    &-fit__full {
+        object-fit: fill;
+    }
+    &-fit__contain {
+        object-fit: contain;
+    }
+    &-position__right {
+        object-position: right;
+    }
+    &-position__left {
+        object-position: left;
+    }
+    &-position__top {
+        object-position: top;
+    }
+    &-position__bottom {
+        object-position: bottom;
+    }
+}

@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 16/10  = 10px = 1rem
+
+    @include respond(tab-land) {
+        font-size: 56.25%; //1rem = 9px, 9/16 =
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; //1rem = 8px , 8/16 = 5
+    }
+
+    @include respond(phone) {
+        font-size: 43.75%; //1rem = 9px, 9/16 =
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12, 12/16 =
+    }
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul,
+li {
+    list-style: none;
+}

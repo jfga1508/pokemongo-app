@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    grid-column: full-start / full-end;
+    grid-row: 2 / span 1;
+
+    margin-top: 8rem;
+}

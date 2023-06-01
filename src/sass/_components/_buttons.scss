@@ -1,0 +1,132 @@
+.btn {
+    min-height: 5.1rem;
+    min-width: 22rem;
+    padding: 1rem;
+    border: 0;
+    box-shadow: 0px 1rem 1rem rgba(color(black), 0.25);
+    border-radius: 10rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    line-height: 2.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.1em;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+    &--outline {
+        border: 2px solid color(white);
+        color: color(white);
+        background-color: transparent;
+        &::after {
+            border: 2px solid color(white);
+        }
+    }
+
+    &--primary {
+        background-color: color(primary);
+        color: color(white);
+        &::after {
+            background-color: color(primary);
+        }
+    }
+
+    &--gradient {
+        background: linear-gradient(
+            93.57deg,
+            color(primary) 0%,
+            color(secondary) 99.51%
+        );
+        color: color(white);
+        &::after {
+            background: linear-gradient(
+                93.57deg,
+                color(primary) 0%,
+                color(secondary) 99.51%
+            );
+        }
+    }
+
+    &--circular {
+        border-radius: 50%;
+    }
+
+    &-add {
+        min-width: 7rem;
+        width: 7rem;
+        min-height: 7rem;
+        height: 7rem;
+        color: color(white);
+        background-color: color(grass);
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        &__icon {
+            width: 7rem;
+            height: 7rem;
+            fill: color(white);
+        }
+    }
+
+    &-delete,
+    &-edit {
+        box-shadow: none;
+        min-width: 4rem;
+        width: 4rem;
+        min-height: 4rem;
+        height: 4rem;
+        color: color(white);
+        background-color: transparent;
+        &__icon {
+            width: 4rem;
+            height: 4rem;
+            fill: color(white);
+        }
+    }
+
+    &:hover,
+    &:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(color(black), 0.2);
+        outline: none;
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+
+    &--animated {
+        animation: moveInBottom 0.5s ease-out 0.75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.add-pokemon {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    z-index: 10;
+    font-size: 4rem;
+    border: 0;
+    color: color(white);
+    background-color: color(grass);
+}

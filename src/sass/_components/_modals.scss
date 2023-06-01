@@ -1,0 +1,390 @@
+.modal-contact {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    background: rgba(color(black), 0.5);
+    display: grid;
+    place-items: center;
+
+    // opacity: 0;
+    // visibility: hidden;
+
+    transition: all 0.3s;
+
+    &__content {
+        background: linear-gradient(
+                to right,
+                color(secondary) 0%,
+                color(secondary) 50%,
+                transparent 50%
+            ),
+            url(/../public/assets/images/contatc-us-modal.jpeg);
+        background-size: cover;
+        padding: 2rem;
+        border-radius: 20px;
+        width: 75%;
+
+        @include respond(tab-port) {
+            background: linear-gradient(
+                114.29deg,
+                rgba(color(primary), 0.9) 0%,
+                rgba(color(secondary), 0.9) 100%
+            );
+        }
+
+        @include lg() {
+        }
+    }
+
+    &__header,
+    &__body {
+        width: calc(50% - 2rem);
+
+        @include respond(tab-port) {
+            width: calc(100% - 2rem);
+        }
+    }
+
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+        line-height: 2.7rem;
+        margin-bottom: 1rem;
+    }
+
+    &__btn {
+        min-width: 50%;
+        margin-right: 1rem;
+
+        @include respond(phone) {
+            min-width: 100%;
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.modal-pokemon {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    background: rgba(color(black), 0.5);
+    display: grid;
+    place-items: center;
+
+    // opacity: 0;
+    // visibility: hidden;
+
+    transition: all 0.3s;
+
+    &__content {
+        background: linear-gradient(
+            to right,
+            color(secondary) 0%,
+            color(secondary) 100%,
+            transparent 100%
+        );
+        padding: 2rem;
+        border-radius: 20px;
+        width: 75%;
+        max-width: 650px;
+
+        @include respond(tab-port) {
+            background: linear-gradient(
+                114.29deg,
+                rgba(color(primary), 0.9) 0%,
+                rgba(color(secondary), 0.9) 100%
+            );
+        }
+
+        @include lg() {
+        }
+
+        .form__input,
+        .form__text-area,
+        .form__select {
+            padding: 0.9rem 1rem;
+            font-size: 1.3rem;
+        }
+        .form__label {
+            font-size: 1.3rem;
+        }
+    }
+
+    &__header,
+    &__body {
+        width: calc(100% - 2rem);
+
+        @include respond(tab-port) {
+            width: calc(100% - 2rem);
+        }
+    }
+
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+        line-height: 2.7rem;
+        margin-bottom: 1rem;
+    }
+
+    &__btn {
+        min-width: 50%;
+        margin-right: 1rem;
+
+        @include respond(phone) {
+            min-width: 100%;
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__group {
+        display: grid;
+        grid-template-columns:
+            [col-1] calc(25% - 2rem) [col-2] calc(25% - 2rem) [col-3] calc(
+                25% - 2rem
+            )
+            [col-4] calc(25% - 2rem);
+        grid-column-gap: 2rem;
+    }
+
+    &__cols2-5 {
+        grid-column-start: col-2;
+        grid-column-end: col-5;
+    }
+
+    &__cols3-5 {
+        grid-column-start: col-3;
+        grid-column-end: col-5;
+    }
+}
+
+.modal-pokedex {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    background: rgba(color(black), 0.5);
+    display: grid;
+    place-items: center;
+
+    // opacity: 0;
+    // visibility: hidden;
+
+    transition: all 0.3s;
+
+    &__content {
+        background: linear-gradient(
+            114.29deg,
+            rgba(color(primary), 0.9) 0%,
+            rgba(color(secondary), 0.9) 100%
+        );
+        padding: 2rem 2rem 3rem 2rem;
+        border-radius: 20px;
+        width: 75%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__header {
+        display: flex;
+        justify-self: normal;
+    }
+
+    &__number {
+        margin-right: auto;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.7rem;
+        color: color(white);
+        z-index: 10;
+    }
+
+    &__number-pokedex {
+        display: none;
+    }
+
+    &__type {
+        width: 4.8rem;
+        height: 2.7rem;
+        border-radius: 20px;
+
+        &--grass {
+            background: color(grass);
+            box-shadow: 0px 0px 10px color(grass);
+        }
+
+        &--fire {
+            background: color(fire);
+            box-shadow: 0px 0px 10px color(fire);
+        }
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 800;
+        font-size: 3.6rem;
+        line-height: 4.9rem;
+        color: color(white);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        z-index: 10;
+
+        @include respond(phone) {
+            order: -1;
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr 30rem 1fr;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(phone) {
+            grid-template-columns: 1fr 15rem 1fr;
+        }
+    }
+
+    &__weight,
+    &__height {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin-top: 2rem;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__paragraph {
+        line-height: normal;
+        text-align: center;
+    }
+
+    &__title-header {
+        font-size: 2rem;
+        color: color(gray);
+    }
+
+    &__description-header {
+        font-size: 1.8rem;
+    }
+
+    &__img {
+        position: relative;
+        margin-bottom: 1rem;
+        display: grid;
+        place-items: center;
+        z-index: 5;
+        max-width: 100%;
+
+        img {
+            object-fit: cover;
+            display: block;
+            max-width: 100%;
+            z-index: 10;
+        }
+
+        span {
+            position: absolute;
+            top: 2rem;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        &--grass span {
+            background: color(grass);
+            filter: blur(100px);
+        }
+
+        &--fire span {
+            background: color(fire);
+            filter: blur(100px);
+        }
+
+        &--water span {
+            background: color(water);
+            filter: blur(100px);
+        }
+    }
+
+    &__stats {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 10;
+
+        & > * + * {
+            margin-top: 1rem;
+        }
+    }
+
+    &__stat {
+        display: flex;
+
+        & > * + * {
+            margin-left: 1rem;
+        }
+    }
+
+    &__title-stat {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.7rem;
+        letter-spacing: 0.05em;
+        color: color(white);
+        width: 10rem;
+        text-align: end;
+    }
+
+    &__number-stat {
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 2.7rem;
+        letter-spacing: 0.05em;
+        color: color(white);
+        width: 5rem;
+        text-align: end;
+    }
+
+    &__chart-stat {
+        width: 20rem;
+        height: 3rem;
+        background: color(primary);
+        border-radius: 20px;
+        margin-left: 2rem;
+        position: relative;
+    }
+
+    &__number-chart-stat {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 3rem;
+        background: color(white);
+        box-shadow: 0px 0px 1rem color(white);
+        border-radius: 20px;
+    }
+
+    &__footer {
+        margin-top: 2rem;
+    }
+}

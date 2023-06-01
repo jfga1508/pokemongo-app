@@ -1,0 +1,37 @@
+.footer {
+    grid-column: full-start / full-end;
+    grid-row: 3 / span 1;
+    background-color: color(black);
+    padding: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(phone) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    &__logo {
+        margin-right: 4rem;
+
+        @include respond(phone) {
+            margin-right: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__logo img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    &__paragraph {
+        font-weight: 300;
+        font-size: 2rem;
+        line-height: 2.7rem;
+        letter-spacing: 0.05em;
+        color: color(white);
+    }
+}

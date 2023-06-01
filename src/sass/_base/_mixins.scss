@@ -1,0 +1,116 @@
+/*
+* Margin, Padding, Gaps and Borders-radius mixin generator
+*/
+$space: (0, 1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$pos: (top, bottom, left, right);
+
+@each $s in $space {
+    .gap-#{$s} {
+        gap: #{$s}rem;
+    }
+    .border-radius-#{$s} {
+        border-radius: #{$s}rem;
+    }
+    .m-#{$s} {
+        margin: #{$s}rem;
+    }
+    .p-#{$s} {
+        margin: #{$s}rem;
+    }
+    @each $p in $pos {
+        .m#{str-slice($p, 0, 1)}-#{$s} {
+            margin-#{$p}: #{$s}rem;
+        }
+        .p#{str-slice($p, 0, 1)}-#{$s} {
+            padding-#{$p}: #{$s}rem;
+        }
+
+        @if ($p == 'right') {
+            .border-right-radius-#{$s} {
+                border-radius: 0 #{$s}rem #{$s}rem 0;
+            }
+        }
+
+        @if ($p == 'left') {
+            .border-left-radius-#{$s} {
+                border-radius: #{$s}rem 0 0 #{$s}rem 0;
+            }
+        }
+
+        @if ($p == 'top') {
+            .border-top-radius-#{$s} {
+                border-radius: #{$s}rem #{$s}rem 0 0;
+            }
+        }
+
+        @if ($p == 'bottom') {
+            .border-bottom-radius-#{$s} {
+                border-radius: 0 0 #{$s}rem #{$s}rem;
+            }
+        }
+    }
+}
+
+/*
+* Responsive Mixins
+*/
+
+// Smallest devices
+@mixin xs {
+    @media (max-width: #{$screen-xs-min}) {
+        @content;
+    }
+}
+// Small devices
+@mixin sm {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+// Medium devices
+@mixin md {
+    @media (max-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+// Large devices
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == tiny-phone {
+        @media only screen and (max-width: 26.875em) {
+            @content;
+        } // 600px
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        } // 600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.5em) {
+            @content;
+        } // 900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) {
+            @content;
+        } // 1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        } // 1800px
+    }
+}

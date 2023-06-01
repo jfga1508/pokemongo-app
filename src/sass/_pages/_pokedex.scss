@@ -1,0 +1,53 @@
+.pokedex {
+    grid-column: full-start / full-end;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(10rem, 1fr) [center-start] repeat(
+            8,
+            [col-start] minmax(min-content, 14rem) [col-end]
+        )
+        [center-end] minmax(10rem, 1fr) [full-end];
+    grid-template-rows: 15rem 1fr 14rem;
+    align-items: center;
+    column-gap: 1rem;
+
+    min-height: calc(100vh - 8rem);
+    margin-top: 8rem;
+
+    background: linear-gradient(
+        144.82deg,
+        color(white) 0%,
+        color(secondary) 0.01%,
+        color(primary) 100%
+    );
+
+    &__title {
+        grid-column: center-start / center-end;
+        grid-row: 1;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        z-index: 10;
+
+        animation: moveInLeft 0.5s ease-out;
+    }
+
+    &__loader {
+        grid-column: center-start/center-end;
+        grid-row: 2;
+        justify-self: center;
+    }
+
+    &-container {
+        grid-column: center-start / center-end;
+        grid-row: 2;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        grid-gap: 2rem;
+        justify-items: center;
+    }
+}

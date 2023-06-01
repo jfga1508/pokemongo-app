@@ -1,0 +1,51 @@
+/*
+* Colors
+*/
+$theme-colors: (
+    'primary': #4e2d9c,
+    'secondary': #2e1b5a,
+    'purple': #834fff,
+    'white': #ffffff,
+    'black': #000000,
+    'gray': #cccccc,
+    'grass': #4b9e2e,
+    'water': #3161ff,
+    'fire': #ff6005,
+    'dark': #181818,
+    'bug': #adce61,
+    'fairy': #ff81d9,
+    'dragon': #120061,
+    'electric': #ffdf50,
+    'fighting': #ff0000,
+    'flying': #76b2ff,
+    'ghost': #250025,
+    'ground': #532b2b,
+    'ice': #42baff,
+    'normal': #ffffff,
+    'poison': #8b008b,
+    'psychic': #a057a0,
+    'rock': #cca292,
+    'steel': #919191,
+);
+
+@function color($col) {
+    @return map-get($theme-colors, '#{$col}');
+}
+
+/*
+* Responsive
+*/
+// Small smartphones (landscape view)
+$screen-xs-min: 320px;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and laptops
+$screen-lg-min: 1024px;
+
+// Large laptops and desktops
+$screen-xl-min: 1200px;

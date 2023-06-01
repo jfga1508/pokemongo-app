@@ -1,0 +1,92 @@
+.input,
+.textarea {
+    background: color(primary);
+    box-shadow: 0px 10px 10px rgba(color(black), 0.25);
+    border: 0;
+    padding: 9px 24px;
+    color: color(gray);
+    font-size: 1.6rem;
+    width: 100%;
+    &::placeholder {
+        color: color(gray);
+    }
+}
+.input {
+    border-radius: 100px;
+    height: 40px;
+}
+.textarea {
+    border-radius: 10px;
+}
+
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__group--btn {
+        display: flex;
+
+        @include respond(phone) {
+            flex-direction: column;
+        }
+    }
+
+    &__text-area {
+        font-family: inherit;
+        resize: none;
+    }
+
+    &__input,
+    &__text-area,
+    &__select {
+        background: color(primary);
+        box-shadow: 0px 10px 10px rgba(color(black), 0.25);
+        padding: 0.9rem 2.4rem;
+        color: color(gray);
+        font-size: 1.6rem;
+        width: 100%;
+        border: none;
+        border-bottom: 3px solid transparent;
+
+        transition: all 0.3s;
+
+        &::placeholder {
+            color: color(gray);
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 3px solid color(grass);
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid color(fire);
+        }
+    }
+
+    &__select {
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+        background-position: 100%;
+        background-repeat: no-repeat;
+    }
+
+    &__label {
+        font-size: 1.6rem;
+        font-weight: normal;
+        margin-left: 2.4rem;
+        margin-top: 1rem;
+        color: color(white);
+        display: block;
+        transition: all 0.3s;
+    }
+
+    &__input:placeholder-shown + &__label,
+    &__text-area:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+}

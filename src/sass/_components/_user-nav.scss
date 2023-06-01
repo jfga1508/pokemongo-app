@@ -1,0 +1,56 @@
+.user-nav {
+    grid-template-columns: repeat(4, minmax(min-content, 14rem));
+    grid-template-rows: 8rem;
+
+    transition: all 0.3s;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            background: linear-gradient(
+                114.29deg,
+                rgba(color(primary), 0.9) 0%,
+                rgba(color(secondary), 0.9) 100%
+            );
+            width: 75%;
+            height: 100vh;
+            padding: 20rem;
+        }
+    }
+
+    &__item {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        letter-spacing: 0.1em;
+        color: color(white);
+        transition: all 0.3s;
+        margin-bottom: -0.5rem;
+        border-bottom: 2px solid transparent;
+
+        animation: moveInBottom 0.5s ease-out;
+
+        @include respond(tab-port) {
+            width: max-content;
+            margin-bottom: 4.5rem;
+        }
+
+        a {
+            color: currentColor;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        &:hover,
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid color(white);
+        }
+    }
+}
